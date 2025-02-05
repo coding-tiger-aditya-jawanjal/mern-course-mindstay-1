@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "../styles/home.css";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -10,6 +11,8 @@ const Home = () => {
     3. useState - hook in react.js
     4. ""       - initial state / value
   */
+
+  useEffect(() => {}, []);
 
   const handleAdd = () => {
     setTasks((prev) => [...prev, text]);
@@ -33,7 +36,7 @@ const Home = () => {
       <div className="box">
         {tasks?.length > 0 &&
           tasks.map((element, index) => {
-            return <p key={index}>{element}</p>;
+            return <p key={index}>{index + 1 + ". " + element}</p>;
           })}
       </div>
     </main>
@@ -41,3 +44,24 @@ const Home = () => {
 };
 
 export default Home;
+
+/*
+
+1. LocalStorage - persist
+2. Session Storage - removed when the browser tab is closed
+3. Cookies - After given time , it deletes
+*/
+
+
+/*
+  useEffect Hook
+
+  1. Functional Comp  
+    a. useEffect Hook
+
+  2. Class Compo
+    a. componentDidMount
+    b. componendDidUnmount
+    c. componentDidUpdate
+
+ */
