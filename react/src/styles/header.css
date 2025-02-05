@@ -1,0 +1,86 @@
+header {
+  padding: 20px 40px;
+  background: rgb(195, 227, 227);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+nav {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-style: italic;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  transition: all ease-in-out 300ms;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgb(1, 60, 1);
+  color: aliceblue;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+button:hover {
+  scale: 105%;
+  background: red;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+input {
+  font-size: 1.3rem;
+  padding: 20px 40px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.box {
+  align-self: flex-start;
+  margin: 30px 420px;
+  font-size: 1.2rem;
+}
