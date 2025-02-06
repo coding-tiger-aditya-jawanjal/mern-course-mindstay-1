@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Post from "../components/Post";
 
 const Projects = () => {
   // useEffect
@@ -12,7 +11,7 @@ const Projects = () => {
 
   return (
     <div>
-      <Post number={26} />
+     
     </div>
   );
 };
