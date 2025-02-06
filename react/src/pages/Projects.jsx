@@ -1,7 +1,18 @@
+import { useEffect } from "react";
+import Post from "../components/Post";
+
 const Projects = () => {
+  // useEffect
+
+  useEffect(() => {
+    setTimeout(() => {
+      alert("Alert message from Me : ");
+    }, 2000);
+  }, []);
+
   return (
     <div>
-      <h2>Projects</h2>
+      <Post number={26} />
     </div>
   );
 };

@@ -1,0 +1,20 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.counter {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  font-size: 3rem;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 5rem;
+  cursor: pointer;
+  background: rgb(180, 192, 180);
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/home.css";
+import Post from "../components/Post";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -36,7 +37,7 @@ const Home = () => {
       <div className="box">
         {tasks?.length > 0 &&
           tasks.map((element, index) => {
-            return <p key={index}>{index + 1 + ". " + element}</p>;
+            return <Post number={index} />;
           })}
       </div>
     </main>
@@ -51,7 +52,6 @@ export default Home;
 2. Session Storage - removed when the browser tab is closed
 3. Cookies - After given time , it deletes
 */
-
 
 /*
   useEffect Hook
