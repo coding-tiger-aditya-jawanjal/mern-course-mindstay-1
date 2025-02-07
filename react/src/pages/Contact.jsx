@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/contact.css";
+import MainLayout from "../MainLayout";
 
 const Contact = () => {
   const [number, setNumber] = useState(0);
@@ -13,13 +14,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      <div className="counter">
-        <button onClick={handleMinus}>-</button>
-        <span> {number} </span>
-        <button onClick={handlePlus}>+</button>
+    <MainLayout>
+      <div className="contact">
+        <div className="counter">
+          <button onClick={handleMinus}>-</button>
+          <span> {number} </span>
+          <button onClick={handlePlus}>+</button>
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

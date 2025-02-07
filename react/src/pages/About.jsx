@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import MainLayout from "../MainLayout";
 
 const About = () => {
   useEffect(() => {
@@ -24,16 +25,18 @@ const About = () => {
   };
 
   return (
-    <div style={{ margin: "50px" }}>
-      <h2> Local Storage Data : </h2>
-      <h2> About Page </h2>
-      <button className="btn" onClick={handleAdd}>
-        Add to Storage
-      </button>
-      <button className="btn" onClick={handleDelete}>
-        Delete from Storage
-      </button>
-    </div>
+    <MainLayout>
+      <div style={{ margin: "50px" }}>
+        <h2> Local Storage Data : </h2>
+        <h2> About Page </h2>
+        <button className="btn" onClick={handleAdd}>
+          Add to Storage
+        </button>
+        <button className="btn" onClick={handleDelete}>
+          Delete from Storage
+        </button>
+      </div>
+    </MainLayout>
   );
 };
 
