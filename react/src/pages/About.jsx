@@ -1,42 +1,96 @@
-import { useEffect } from "react";
-import MainLayout from "../MainLayout";
+import { useEffect, useState } from "react";
+import "../styles/about.css";
 
 const About = () => {
-  useEffect(() => {
-    const auth1 = localStorage.getItem("token");
-    const auth2 = sessionStorage.getItem("token");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
 
-    console.log(auth1);
-    console.log(auth2);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      name,
+      email,
+      password,
+    };
+
+    localStorage.setItem("user", JSON.stringify(data));
+
+    sessionStorage.setItem("user", JSON.stringify(data));
+
+    setUser(data);
+
+    setName("");
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+
+    localStorage.clear();
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const addedUser = JSON.parse(localStorage.getItem("user"));
+
+    setUser(addedUser);
   }, []);
 
-  const handleAdd = () => {
-    localStorage.setItem(
-      "token",
-      JSON.stringify({ name: "pushkar", rollno: 52 })
-    );
-
-    sessionStorage.setItem("token", "this-is-a-token-sessionstorage");
-  };
-
-  const handleDelete = () => {
-    localStorage.clear();
-    sessionStorage.clear();
-  };
-
   return (
-    <MainLayout>
-      <div style={{ margin: "50px" }}>
-        <h2> Local Storage Data : </h2>
-        <h2> About Page </h2>
-        <button className="btn" onClick={handleAdd}>
-          Add to Storage
-        </button>
-        <button className="btn" onClick={handleDelete}>
-          Delete from Storage
+    <>
+      <div className="about">
+        <form>
+          <div className="input">
+            <label htmlFor="name">Name : </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={(e) => setName(e.target.value)}
+              value={name ? name : ""}
+            />
+          </div>
+
+          <div className="input">
+            <label htmlFor="email">Email : </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email ? email : ""}
+            />
+          </div>
+
+          <div className="input">
+            <label htmlFor="password">Password : </label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password ? password : ""}
+            />
+          </div>
+
+          <button className="my-btn" onClick={handleSubmit}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="data">
+        <p>Name : {user ? user.name : ""} </p>
+        <p>Email : {user ? user.email : ""} </p>
+        <p>Password : {user ? user.password : ""} </p>
+        <button className="my-btn" onClick={handleDelete}>
+          Delete Local Storage
         </button>
       </div>
-    </MainLayout>
+    </>
   );
 };
 

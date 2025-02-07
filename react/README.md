@@ -4,3 +4,7 @@
 4. Importing and adding CSS
 5. useState Hook
 6. useEffect Hook
+7. useParams Hook
+8. Nested Components - children
+9. Nested Routes - Outlet
+10. LocalStorage , sessionStorage , Cookies

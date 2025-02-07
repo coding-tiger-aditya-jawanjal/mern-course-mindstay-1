@@ -1,0 +1,32 @@
+.about {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid blue;
+  width: 250px;
+  outline: none;
+}
+
+.data{
+    margin: 50px;
+}
