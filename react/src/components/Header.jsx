@@ -1,5 +1,5 @@
 import "../styles/header.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,15 +13,14 @@ const Header = () => {
           <h2>Mindstay</h2>
         </div>
         <nav>
-          {/* <Link to={`/`} className="link">
-            Home
-          </Link>
-          <Link to={`/about`} className="link">
-            About
-          </Link>
           <Link to={`/contact`} className="link">
             Contact
           </Link>
+          {/* 
+          <Link to={`/about`} className="link">
+            About
+          </Link>
+         
           <Link to={`/projects`} className="link">
             Projects
           </Link> */}

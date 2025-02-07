@@ -1,13 +1,13 @@
 import { useStore } from "../context/context";
 
-const Contact = () => {
+const Component1 = () => {
   const { mobile } = useStore();
 
   return (
     <div>
-      <h2>{mobile}</h2>
+      <h2>Mobile Number : {mobile} </h2>
     </div>
   );
 };
 
-export default Contact;
+export default Component1;
