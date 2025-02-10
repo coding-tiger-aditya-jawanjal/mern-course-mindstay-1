@@ -1,0 +1,20 @@
+{
+  "name": "backend-course",
+  "version": "1.0.0",
+  "description": "This is the ultimate Backend Course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "MERN",
+    "Backend"
+  ],
+  "author": "Aditya Jawanjal",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
