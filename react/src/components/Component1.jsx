@@ -1,7 +1,7 @@
 import { useStore } from "../context/context";
 
 const Component1 = () => {
-  const { mobile } = useStore();
+  const { mobile, message } = useStore();
 
   return (
     <div>

@@ -8,3 +8,5 @@
 8. Nested Components - children
 9. Nested Routes - Outlet
 10. LocalStorage , sessionStorage , Cookies
+11. Context API (useContext Hook)
+12. useNavigate Hook

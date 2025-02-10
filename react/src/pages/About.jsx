@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/about.css";
+import Cookies from "js-cookie";
 
 const About = () => {
   const [name, setName] = useState("");
@@ -8,6 +9,10 @@ const About = () => {
   const [user, setUser] = useState(null);
 
   const handleSubmit = (e) => {
+    if (user) {
+      return alert("User is already Registered !");
+    }
+
     e.preventDefault();
 
     const data = {
@@ -19,6 +24,8 @@ const About = () => {
     localStorage.setItem("user", JSON.stringify(data));
 
     sessionStorage.setItem("user", JSON.stringify(data));
+
+    Cookies.set("user", JSON.stringify(data), { expires: 7 });
 
     setUser(data);
 
