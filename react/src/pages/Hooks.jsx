@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import Counter from "../components/Counter";
 
@@ -29,6 +36,15 @@ const Hooks = () => {
   const handleUpload = () => {
     inputRef.current.click();
   };
+
+  //useLayoutEffect
+  useLayoutEffect(() => {
+    console.log("hello world from layout !");
+  }, []);
+
+  useEffect(() => {
+    console.log("hello world from useEffect !");
+  }, []);
 
   return (
     <>
