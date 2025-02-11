@@ -1,7 +1,10 @@
 const express = require("express");
 const router = require("./routes");
+const connectDB = require("./db");
 
+connectDB();
 const app = express();
+app.use(express.json());
 app.use("/api", router);
 
 const port = 4000;
