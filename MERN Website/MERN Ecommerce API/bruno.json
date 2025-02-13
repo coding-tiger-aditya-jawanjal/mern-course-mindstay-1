@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "MERN Ecommerce API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
