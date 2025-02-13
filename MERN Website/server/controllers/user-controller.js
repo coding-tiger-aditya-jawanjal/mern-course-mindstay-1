@@ -59,7 +59,7 @@ exports.signup = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: "None",
       path: "/",
       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -97,7 +97,10 @@ exports.login = async (req, res) => {
       });
     }
 
-    const passwordMatched = await bcrypt.compare(password, emailExists.password);
+    const passwordMatched = await bcrypt.compare(
+      password,
+      emailExists.password
+    );
 
     if (!passwordMatched) {
       return res.status(400).json({
@@ -119,7 +122,7 @@ exports.login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: "None",
       path: "/",
       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -135,6 +138,18 @@ exports.login = async (req, res) => {
       ok: false,
     });
   }
+};
+
+exports.logout = async (req, res) => {
+  res.cookie("token", null, {
+    httpOnly: true,
+    secure: false,
+    sameSite: "None",
+    path: "/",
+    maxAge: 0,
+  });
+
+  res.status(200).json({ msg: "User logged Out !", ok: true });
 };
 
 /*
